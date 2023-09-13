@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(odd) {
+            background-color: #ddd;
+        }
+        th {
+            cursor: pointer;
+            background-color: #222;
+            color: #eee
+        }
+        th:hover {
+            background-color: #333;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sortable Table</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">ID</th>
+                <th onclick="sortTable(1)">Name</th>
+                <th onclick="sortTable(2)">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>John Doe</td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Jane Smith</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Robert Johnson</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>Mary Johnson</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td>Michael Brown</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td>Susan Davis</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>David Wilson</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td>Linda Miller</td>
+                <td>33</td>
+            </tr>
+            <!-- Add more rows with fake data as needed -->
+        </tbody>
+    </table>
+
+    <script>
+        function sortTable(column) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("data-table");
+            switching = true;
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[column];
+                    y = rows[i + 1].getElementsByTagName("td")[column];
+
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
