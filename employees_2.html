@@ -7,6 +7,7 @@
             border-collapse: collapse;
             width: 50%;
             margin: 20px auto;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         th, td {
             border: 1px solid #ddd;
@@ -15,6 +16,12 @@
         }
         tr:nth-child(odd) {
             background-color: #ddd;
+        }
+        tr:nth-child(odd):hover {
+            background-color: #ccc;
+        }
+        tr:nth-child(even):hover {
+            background-color: #eee;
         }
         th {
             cursor: pointer;
@@ -26,11 +33,29 @@
         }
         h1{
             text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 80px;
+            font-kerning: normal;
+            color: #7d231f;
+            
+        }
+        h2{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 60px;
+            font-kerning: normal;
+            color: #4e0c09;
+            
+        }
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
         }
     </style>
 </head>
 <body>
-    <h1>Sortable Table</h1>
+    <p style="text-align: center;">This page was built using both HTML and CSS. As you can see, the page is now formatted slightly to use different fonts, alignments, and colors. The rows of the table even change color when the mouse hovers over it.</p>
+    <h1>Employees</h1>
     <table id="data-table">
         <thead>
             <tr>
@@ -80,8 +105,9 @@
                 <td>Linda Miller</td>
                 <td>33</td>
             </tr>
-            <!-- Add more rows with fake data as needed -->
         </tbody>
     </table>
+    <h2>What does CSS do?</h2>
+    <p>If we view the raw HTML again, we can see that there are some new style options that have been added at the top of the page using <code>style</code> tags. The CSS doesn't actually change the HTML page, but is instead added as a separate part of HTML to determine how each element (thing) in the HTML code should be formatted.</p>
 </body>
 </html>

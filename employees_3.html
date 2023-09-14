@@ -7,6 +7,7 @@
             border-collapse: collapse;
             width: 50%;
             margin: 20px auto;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         th, td {
             border: 1px solid #ddd;
@@ -15,6 +16,12 @@
         }
         tr:nth-child(odd) {
             background-color: #ddd;
+        }
+        tr:nth-child(odd):hover {
+            background-color: #ccc;
+        }
+        tr:nth-child(even):hover {
+            background-color: #eee;
         }
         th {
             cursor: pointer;
@@ -26,11 +33,29 @@
         }
         h1{
             text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 80px;
+            font-kerning: normal;
+            color: #7d231f;
+            
+        }
+        h2{
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 60px;
+            font-kerning: normal;
+            color: #4e0c09;
+            
+        }
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
         }
     </style>
 </head>
 <body>
-    <h1>Sortable Table</h1>
+    <p>This page was created using HTML, CSS, and JavaScript. The HTML code provides the structure of the page, the CSS determines how each element should be formatted, and JavaScript determines how the user can interact with the web page. In this case, JavaScript allows users to click the column names of the table below to sort the data.</p>
+    <h1>Employees</h1>
     <table id="data-table">
         <thead>
             <tr>
@@ -80,10 +105,11 @@
                 <td>Linda Miller</td>
                 <td>33</td>
             </tr>
-            <!-- Add more rows with fake data as needed -->
         </tbody>
     </table>
-
+<h2>Why it's important</h2>
+<p>As you might be able to see, the actual data of this web page is stored in the HTML code. Both CSS and JavaScript have nothing to do with the actual data itself, but mostly just make the page look and work better. Thus, for web scraping the data from this page, only a knowledge of HTML is required.</p>
+<p>However, more modern websites don't always deliver the data in nice HTML tables. CSS is often used as a locator to locate the data inside of a particular table. Furthermore, more and more websites nowadays deliver empty HTML pages that are later populated with JavaScript processes to stop others from web scraping their sites. These issues are important to know about when performing web scraping.</p>
     <script>
         function sortTable(column) {
             var table, rows, switching, i, x, y, shouldSwitch;
